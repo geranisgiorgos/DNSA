@@ -1,0 +1,54 @@
+# Project: Algorithm_Denpsa
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = dnepsa.o dualtree.o graph.o index.o netgen.o random.o main.o nepsa.o dnsa.o $(RES)
+LINKOBJ  = dnepsa.o dualtree.o graph.o index.o netgen.o random.o main.o nepsa.o dnsa.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = Algorithm_Dnepsa.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Algorithm_Dnepsa.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Algorithm_Dnepsa.exe" $(LIBS)
+
+dnepsa.o: dnepsa.c
+	$(CC) -c dnepsa.c -o dnepsa.o $(CFLAGS)
+
+dualtree.o: dualtree.c
+	$(CC) -c dualtree.c -o dualtree.o $(CFLAGS)
+
+graph.o: graph.c
+	$(CC) -c graph.c -o graph.o $(CFLAGS)
+
+index.o: index.c
+	$(CC) -c index.c -o index.o $(CFLAGS)
+
+netgen.o: netgen.c
+	$(CC) -c netgen.c -o netgen.o $(CFLAGS)
+
+random.o: random.c
+	$(CC) -c random.c -o random.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+nepsa.o: nepsa.c
+	$(CC) -c nepsa.c -o nepsa.o $(CFLAGS)
+
+dnsa.o: dnsa.c
+	$(CC) -c dnsa.c -o dnsa.o $(CFLAGS)
